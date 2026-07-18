@@ -5,7 +5,7 @@ import requests
 from dotenv import load_dotenv
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-
+import urllib.request
 # ---------------------------------
 # Load Environment Variables
 # ---------------------------------
@@ -25,8 +25,19 @@ session = requests.Session()
 # Load AI Model
 # ---------------------------------
 movies = pickle.load(open("movies.pkl", "rb"))
-similarity = pickle.load(open("similarity.pkl", "rb"))
 
+SIMILARITY_FILE = "similarity.pkl"
+
+if not os.path.exists(SIMILARITY_FILE):
+    print("Downloading similarity.pkl...")
+
+    url = "https://huggingface.co/Subham5126/movie-recommendation-model/resolve/main/similarity.pkl"
+
+    urllib.request.urlretrieve(url, SIMILARITY_FILE)
+
+    print("Download complete!")
+
+similarity = pickle.load(open(SIMILARITY_FILE, "rb"))
 # ---------------------------------
 # Recommendation Function
 # ---------------------------------
