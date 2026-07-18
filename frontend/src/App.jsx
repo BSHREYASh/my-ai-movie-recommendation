@@ -101,7 +101,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://https://ai-movie-recommendation-system-iq1e.onrender.com/recommend",
+        "https://ai-movie-recommendation-system-iq1e.onrender.com/recommend",
         {
           method: "POST",
           headers: {
