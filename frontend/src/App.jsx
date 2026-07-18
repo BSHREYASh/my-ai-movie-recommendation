@@ -46,7 +46,7 @@ function App() {
   const fetchPopularMovies = async () => {
     try {
       const response = await fetch(
-        "http://https://ai-movie-recommendation-system-iq1e.onrender.com/popular"
+        "https://ai-movie-recommendation-system-iq1e.onrender.com/popular"
       );
 
       const data = await response.json();

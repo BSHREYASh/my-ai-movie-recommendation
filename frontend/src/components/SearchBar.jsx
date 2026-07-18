@@ -17,7 +17,7 @@ function SearchBar({
     const timer = setTimeout(async () => {
       try {
         const response = await fetch(
-          `http://https://ai-movie-recommendation-system-iq1e.onrender.com/search?q=${encodeURIComponent(movie)}`
+          `https://ai-movie-recommendation-system-iq1e.onrender.com/search?q=${encodeURIComponent(movie)}`
         );
 
         const data = await response.json();

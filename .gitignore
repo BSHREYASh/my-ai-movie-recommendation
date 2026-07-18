@@ -1,2 +1,4 @@
 backend/similarity.pkl
 model/similarity.pkl
+.vercel
+.env*
